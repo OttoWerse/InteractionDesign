@@ -46,6 +46,14 @@ class IndexView(generic.ListView):
         return Question.objects.order_by('-pub_date')[:5]
 
 
+class IslandView(generic.ListView):
+    template_name = 'UTC/island.html'
+
+    def get_queryset(self):
+        """Return the last five published questions."""
+        return Question.objects.order_by('-pub_date')[:5]
+
+
 class DetailView(generic.DetailView):
     model = Question
     template_name = 'UTC/detail.html'
