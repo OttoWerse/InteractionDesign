@@ -21,3 +21,48 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.choice_text
+
+
+class Student(models.Model):
+    STUDIERENDENTARIF = 'ST'
+    NORMALTARIF = 'NO'
+    DOPPELTARIF = 'DO'
+    EINZELZIMMER = 'EI'
+    TARIF_CHOICE = [
+        (STUDIERENDENTARIF, 'Studierendentarif'),
+        (NORMALTARIF, 'Normaltarif'),
+        (DOPPELTARIF, 'Doppeltarif'),
+        (EINZELZIMMER, 'Einzelzimmer'),
+    ]
+    name = models.CharField(max_length=300)
+    vorname = models.CharField(max_length=300)
+    strasse = models.CharField(max_length=100)
+    hausnummer = models.PositiveIntegerField()
+    plz = models.PositiveIntegerField()
+    ort = models.CharField(max_length=100)
+    land = models.CharField(max_length=100)
+    geburtsdatum = models.DateTimeField('date of birth')
+    telephone = models.PositiveIntegerField()
+    mail = models.EmailField()
+    studiengang = models.CharField(max_length=100)
+    nameDerHochschule = models.CharField(max_length=100)
+    tarif_choice = models.CharField(
+        max_length=2,
+        choices=TARIF_CHOICE,
+        default=NORMALTARIF,
+    )
+    anmerkung = models.CharField(max_length=300)
+    koffer = models.BooleanField()
+    EINMALZAHLUNG = 'EZ'
+    RATENZAHLUNG = 'RZ'
+    ANZAHLUNG = 'AZ'
+    GUTHABEN = 'GU'
+    GUTSCHEIN = 'GS'
+    ZAHLUNG_CHOICE = [
+        (EINMALZAHLUNG, 'Einmalzahlung'),
+        (RATENZAHLUNG, 'Ratenzahlung'),
+        (ANZAHLUNG, 'Anzahlung'),
+        (GUTHABEN, 'Guthaben'),
+        (GUTSCHEIN, 'Gutschein'),
+    ]
+    agb = models.BooleanField()

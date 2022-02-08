@@ -34,34 +34,31 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.views import generic
 
-from .models import Choice, Question
+from .models import Student
 
 
-class IndexView(generic.ListView):
+class IndexView():
     template_name = 'UTC/index.html'
-    context_object_name = 'latest_question_list'
-
-    def get_queryset(self):
-        """Return the last five published questions."""
-        return Question.objects.order_by('-pub_date')[:5]
 
 
-class IslandView(generic.ListView):
+class IslandView():
     template_name = 'UTC/island.html'
-
-    def get_queryset(self):
-        """Return the last five published questions."""
-        return Question.objects.order_by('-pub_date')[:5]
 
 
 class DetailView(generic.DetailView):
-    model = Question
+    model = Student
     template_name = 'UTC/detail.html'
 
 
 class ResultsView(generic.DetailView):
-    model = Question
+    model = Student
     template_name = 'UTC/results.html'
+
+
+class SignUpView(generic.CreateView):
+    form_class = UserCreationForm
+    success_url = reverse_lazy('login')
+    template_name = 'registration/signup.html'
 
 
 # ...
