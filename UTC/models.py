@@ -65,4 +65,10 @@ class Student(models.Model):
         (GUTHABEN, 'Guthaben'),
         (GUTSCHEIN, 'Gutschein'),
     ]
+    zahlung_choice = models.CharField(
+        max_length=2,
+        choices=ZAHLUNG_CHOICE,
+        default=EINMALZAHLUNG,
+    )
     agb = models.BooleanField()
+
