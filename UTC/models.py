@@ -31,7 +31,7 @@ class Student(models.Model):
     TARIF_CHOICE = [
         (STUDIERENDENTARIF, 'Studierendentarif'),
         (NORMALTARIF, 'Normaltarif'),
-        (DOPPELTARIF, 'Doppeltarif'),
+        (DOPPELTARIF, 'Doppelzimmer'),
         (EINZELZIMMER, 'Einzelzimmer'),
     ]
     name = models.CharField(max_length=300)
@@ -51,7 +51,7 @@ class Student(models.Model):
         choices=TARIF_CHOICE,
         default=NORMALTARIF,
     )
-    anmerkung = models.CharField(max_length=300)
+    anmerkung = models.CharField(max_length=300, blank=True)
     koffer = models.BooleanField()
     EINMALZAHLUNG = 'EZ'
     RATENZAHLUNG = 'RZ'
@@ -71,4 +71,3 @@ class Student(models.Model):
         default=EINMALZAHLUNG,
     )
     agb = models.BooleanField()
-

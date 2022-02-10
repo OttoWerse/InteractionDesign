@@ -24,6 +24,9 @@
                     {{ form.as_p }}
                     <input type="submit" value="Save">
                 </form>
+                {% for field in form %}
+                    {{ field.errors }}
+                {% endfor %}
         </section>
     </div>
 </main>
