@@ -1,0 +1,31 @@
+{% load static %}
+{% include "./header.html" %}
+<main data-bs-spy="scroll" data-bs-offset="0">
+
+    <section id="home" class="container-fluid p-0">
+        <div class="row m-0">
+            <div class="col-sm-12 p-0">
+                <div class="row p-5 m-0">
+                    <div class="col-sm-8">
+                        <h2 class="card-title fw-bold">Schottland</h2>
+                        <p class="card-text fw-light">20. Feb. - 02. Mar. 2021</p>
+                    </div>
+                    <div class="col-sm-4 d-flex align-items-end justify-content-end">
+                        <div>
+                            <p class="float-end m-0">
+                                <a href="/UTC/form" role="button" class="btn btn-primary">Platz Reservieren ></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center"
+                     style="overflow: hidden; min-height: 300px; max-height: 600px; width: auto; position: relative;">
+                    <div class="d-flex align-items-center" style="position: relative; width: 100%; overflow: hidden;">
+                        <img src="https://picsum.photos/seed/schottland-map/1980/1980" class="img-fluid w-100" alt="Hello">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% include "./footer.html" %}
