@@ -14,7 +14,7 @@ class StudentForm(forms.ModelForm):
         }
         # help
         help_texts = {
-            'koffer': 'nehmen sie nur Handgepäck?',
+            'koffer': 'Benötigen Sie Aufgabegepäck?',
         }
         # errors
         error_messages = {

@@ -181,11 +181,18 @@
             crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript">
-        $(window).scroll(function () {
-            $('nav').toggleClass('bg-dark', $(this).scrollTop() > 1);
-            $('.navbar-brand').toggleClass('opacity-0', $(this).scrollTop() < 1);
-            $('.navbar-brand').toggleClass('noClick', $(this).scrollTop() < 1);
-        });
+        if (window.location.pathname != '/UTC/') {
+            $(window).ready(function () {
+                $('nav').addClass('bg-dark');
+                $('body').css('padding-top', '90px');
+            });
+            console.log('NoScroll');
+        } else {
+            console.log('Scroll');
+            $(window).scroll(function () {
+                $('nav').toggleClass('bg-dark', $(this).scrollTop() > 1);
+            });
+        }
     </script>
     <title>University Travel Club</title>
 </head>
@@ -195,17 +202,12 @@
 <header>
     <nav class="navbar navbar-dark fixed-top" style="transition: background-color 0.5s;">
         <div class="container-fluid">
-            <a class="navbar-brand opacity-0 noClick" style="transition: opacity 0.5s;" href="#">
+            <a class="navbar-brand" style="transition: opacity 0.5s;" href="/UTC/">
                 {% load static %}
                 <img src="{% static 'logo.png' %}" alt="Logo" width="auto" height="64"
                      class="d-inline-block align-text-center">
                 University Travel Club
             </a>
-            <ul class="navbar-nav ms-auto flex-nowrap">
-                <li class="nav-item">
-                    <a href="#" class="nav-link m-2 menu-item">Newsletter abonnieren</a>
-                </li>
-            </ul>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                     aria-controls="offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -213,37 +215,16 @@
             <div class="offcanvas bg-dark offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                  aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                    <h5 class="offcanvas-title text-light" id="offcanvasNavbarLabel">Menü</h5>
                     <button type="button" class="btn-close bg-danger text-reset" data-bs-dismiss="offcanvas"
                             aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button"
-                               data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
+                            <a href="/UTC/form" class="nav-link m-2 menu-item">Newsletter abonnieren</a>
                         </li>
                     </ul>
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
                 </div>
             </div>
         </div>
