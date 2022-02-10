@@ -41,7 +41,7 @@ class Student(models.Model):
     plz = models.PositiveIntegerField()
     ort = models.CharField(max_length=100)
     land = models.CharField(max_length=100)
-    geburtsdatum = models.DateTimeField('date of birth')
+    geburtsdatum = models.DateField('date of birth')
     telephone = models.PositiveIntegerField()
     mail = models.EmailField()
     studiengang = models.CharField(max_length=100)

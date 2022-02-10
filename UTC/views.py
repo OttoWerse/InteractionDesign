@@ -33,7 +33,7 @@ class FormVIew(generic.FormView):
 def registered(request):
     form = StudentForm(request.POST)
     form.save()
-    return render(request, 'UTC/index.html', {'form': form})
+    return render(request, 'UTC/success.html', {'form': form})
 
 
 '''
