@@ -22,4 +22,3 @@ class StudentForm(forms.ModelForm):
                 'max_length': "Dieser Name ist zu lang",
             }
         }
-
