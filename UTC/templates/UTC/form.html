@@ -1,16 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surenhohn</title>
-</head>
-<body>
-    <form action="/UTC/registered/" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Save">
-    </form>
-</body>
-</html>
+{% load static %}
+{% include "./header.html" %}
+
+<script type="text/javascript">
+    $(window).ready(function () {
+        $('p label').addClass('form-label');
+        $('p input[type=text]').addClass('form-control');
+        $('p input[type=number]').addClass('form-control');
+        $('p input[type=email]').addClass('form-control');
+        $('p input[type=email]').addClass('form-control');
+        $('p input[type=checkbox]').addClass('form-check-input');
+        $('p select').addClass('form-select');
+        $('p span').addClass('form-text');
+        $('input[type=submit]').addClass('btn btn-primary');
+    });
+    console.log('Form');
+</script>
+
+<main data-bs-spy="scroll" data-bs-offset="0">
+    <div class="container px-5">
+        <section id="home" class="container-fluid p-0">
+                <form action="/UTC/registered/" method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" value="Save">
+                </form>
+        </section>
+    </div>
+</main>
+
+{% include "./footer.html" %}
