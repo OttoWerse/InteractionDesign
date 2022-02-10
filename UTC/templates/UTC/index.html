@@ -3,10 +3,12 @@
 <main data-bs-spy="scroll" data-bs-offset="0">
 
     <section id="home" class="container-fluid p-0">
-        <div class="row m-0">
-            <div class="col p-0">
-                <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                    <div class="carousel-indicators indicators-left">
+        <div class="row-cols-1 m-0">
+            <div class="col-sm-12 p-0">
+                <div id="carouselExampleIndicators" class="carousel slide carousel-fade d-flex align-items-center"
+                     data-bs-ride="carousel"
+                     style="overflow: hidden; min-height: 400px; max-height: 800px; width: auto;">
+                    <div class="carousel-indicators indicators-left" style="z-index: 1000;">
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
                                 class="circle active"
                                 aria-current="true" aria-label="Slide 1"></button>
@@ -15,61 +17,48 @@
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
                                 class="circle" aria-label="Slide 3"></button>
                     </div>
-                    <div class="carousel-indicators" style="pointer-events: none;">
-                        <a href="#reiseangebot" style="pointer-events: all;"><img src="{% static 'arrow-down-thick.png' %}" width="24px"
-                                                     height="24px"></a>
+                    <div class="carousel-indicators" style="z-index: 1000;">
+                        <a href="#reiseangebot" style="pointer-events: all;">
+                            <img src="{% static 'arrow-down-thick.png' %}" width="24px" height="24px">
+                        </a>
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="https://picsum.photos/seed/university/1980/900" class="d-block w-100" alt="Hello">
-                            <div class="card-img-overlay gradient">
-                            </div>
-                            <div class="carousel-caption d-flex align-items-end">
-                                <div>
-                                    <h1 class="text-start fw-bold">»together around the world«</h1>
-                                    <p class="text-start fw-light">Wir bieten Studienreisen für Studierende und
-                                        Hochschulmitglieder an, die Bildung und Reiseabenteuer in Backpacker-Mentalität
-                                        miteinander verbinden.</p>
-                                </div>
-                            </div>
+                            <img src="https://picsum.photos/seed/university/1980/1980" class="img-fluid w-100"
+                                 alt="Hello">
                         </div>
-                        <div class="carousel-item">
-                            <img src="https://picsum.photos/seed/travel/1980/900" class="d-block w-100" alt="Hello">
-                            <div class="card-img-overlay gradient">
-                            </div>
-                            <div class="carousel-caption d-flex align-items-end">
-                                <div>
-                                    <h1 class="text-start fw-bold">»together around the world«</h1>
-                                    <p class="text-start fw-light">Wir bieten Studienreisen für Studierende und
-                                        Hochschulmitglieder an, die Bildung und Reiseabenteuer in Backpacker-Mentalität
-                                        miteinander verbinden.</p>
-                                </div>
-                            </div>
+
+                        <div class="carousel-item d-flex align-items-center">
+                            <img src="https://picsum.photos/seed/travel/1980/1980" class="img-fluid w-100" alt="Hello">
                         </div>
-                        <div class="carousel-item">
-                            <img src="https://picsum.photos/seed/club/1980/900" class="d-block w-100" alt="Hello">
-                            <div class="card-img-overlay gradient">
-                            </div>
-                            <div class="carousel-caption d-flex align-items-end">
-                                <div>
-                                    <h1 class="text-start fw-bold">»together around the world«</h1>
-                                    <p class="text-start fw-light">Wir bieten Studienreisen für Studierende und
-                                        Hochschulmitglieder an, die Bildung und Reiseabenteuer in Backpacker-Mentalität
-                                        miteinander verbinden.</p>
-                                </div>
+
+                        <div class="carousel-item d-flex align-items-center">
+                            <img src="https://picsum.photos/seed/club/1980/1980" class="img-fluid w-100" alt="Hello">
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                                data-bs-slide="prev" style="z-index: 1000;">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                                data-bs-slide="next" style="z-index: 1000;">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                    <div style="z-index: 100;">
+                        <div class="card-img-overlay gradient">
+                        </div>
+                        <div class="carousel-caption d-flex align-items-end">
+                            <div>
+                                <h1 class="text-start fw-bold">»together around the world«</h1>
+                                <p class="text-start fw-light">Wir bieten Studienreisen für Studierende und
+                                    Hochschulmitglieder an, die Bildung und Reiseabenteuer in Backpacker-Mentalität
+                                    miteinander verbinden.</p>
                             </div>
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                            data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                            data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
                 </div>
             </div>
         </div>
@@ -107,7 +96,8 @@
                             </div>
                             <div class="card-img-overlay d-flex align-items-end justify-content-end">
                                 <p class="float-end m-0">
-                                    <a href="georgien-armenien" role="button" class="btn btn-outline-light">Mehr erfahren ></a>
+                                    <a href="georgien-armenien" role="button" class="btn btn-outline-light">Mehr
+                                        erfahren ></a>
                                 </p>
                             </div>
                         </div>
@@ -269,7 +259,7 @@
         <div class="container bg-light">
             <h2 class="fw-bold">Über Uns</h2>
             <div class="row">
-                <div class="col">
+                <div class="col-xl-7 my-5 d-flex align-items-stretch">
                     <p>Die Leidenschaft für das Reisen und das damit verbundene
                         Lebensgefühl, mit anderen zu »teilen«, war nicht nur unser
                         Gründungsgedanke, sondern ist bis heute der Antrieb für jede
@@ -280,7 +270,7 @@
                         faszinierendsten Orten der Welt. Gemeinsam erfahren wir so
                         unvergessliche Momente, die uns auf immer verbinden.</p>
                 </div>
-                <div class="col">
+                <div class="col-xl-5 my-5 px-5 d-flex align-items-stretch">
                     <h1 class="text-start fw-bold text-center text-primary">»Zusammen die Welt erleben.«</h1>
                 </div>
             </div>
