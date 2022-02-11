@@ -136,9 +136,13 @@
 
         h3 {
             font-family: "American Typewriter", serif;
-            font-size: 4.5vh !important;
+            font-size: clamp(20px, 5vw, 80px) !important;
             font-weight: bold;
             text-transform: uppercase;
+        }
+
+        h3.card-title {
+            text-shadow: 0px 0px 20px #000000;
         }
 
         h4 {
@@ -190,7 +194,7 @@
         .card-text {
             font-family: "American Typewriter", serif;
             font-weight: 200;
-            font-size: 2vh !important;
+            font-size: clamp(16px, 4vw, 30px) !important;
         }
 
         .btn {

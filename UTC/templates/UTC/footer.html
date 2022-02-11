@@ -1,12 +1,57 @@
+{% load static %}
 </body>
 
 <footer class="footer mt-auto text-light py-5 bg-info">
     <div class="container">
-        <p class="float-end mb-1">
-            <a href="#" role="button" class="btn btn-outline-light">Back to top</a>
-        </p>
-        <p class="mb-1">© Someone</p>
-        <p class="mb-0">Some text</p>
+        <div class="row">
+            <div class="col-lg-4 align-items-start">
+                <div class="row">
+                    <p class="mb-0"><strong>Kontakt</strong></p>
+                </div>
+                <div class="row">
+                    <p class="mb-0 small">Julia Schnitzer</p>
+                </div>
+                <div class="row">
+                    <p class="mb-0 small">post@university-travel-club.org</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 d-flex  align-items-start">
+                <p class="mb-0"><strong>Newsletter abonnieren</strong></p>
+            </div>
+
+            <div class="col-lg-4 d-flex justify-content-lg-end">
+                <div class="float-lg-end">
+                    <p class="mb-0 small">Facebook</p>
+                    <p class="mb-0 small">Instagram</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row align-items-end">
+            <div class="col-lg-6 align-items-end">
+                <p class="mb-0 align-baseline small domus">© Copyright 2021 - University Travel Club</p>
+            </div>
+            <div class="col-lg-6 align-items-sm-center align-items-lg-end">
+                <a href="#" role="button" class="btn btn-primary rounded-circle m-1 float-sm-none float-lg-end" style="
+                   height: 48px !important;
+                   width: 48px !important;
+                   padding-top: 9px;
+                    ">
+                    <img src="{% static 'arrow-down-thick.png' %}" style="
+                    height: 24px !important;
+                    width: 24px !important;
+                    -webkit-transform: rotate(180deg);
+                    -moz-transform: rotate(180deg);
+                    -o-transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
+                    transform: rotate(180deg)
+                    ">
+                </a>
+                <p class="mx-1 mb-0 align-baseline small domus float-sm-none float-lg-end">Impressum</p>
+                <p class="mx-1 mb-0 align-baseline small domus float-sm-none float-lg-end">Datenschutz</p>
+            </div>
+        </div>
     </div>
 </footer>
 
